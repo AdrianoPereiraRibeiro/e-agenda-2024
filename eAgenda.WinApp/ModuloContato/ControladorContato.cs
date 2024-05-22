@@ -26,7 +26,7 @@ namespace eAgenda.WinApp.ModuloContato
 
             DialogResult resultado = telaContato.ShowDialog();
 
-            // guardas = bloquear momentos em que a aplicação toma um "caminho triste"
+            
             if (resultado != DialogResult.OK)
                 return;
 
