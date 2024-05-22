@@ -1,8 +1,8 @@
 ﻿namespace eAgenda.WinApp.ModuloContato
 {
-    public partial class ListagemContatoControl : UserControl
+    public partial class ListagemCompromissoControl : UserControl
     {
-        public ListagemContatoControl()
+        public ListagemCompromissoControl()
         {
             InitializeComponent();
         }
@@ -21,6 +21,11 @@
                 return null;
 
             return (Contato)listContatos.SelectedItem;
+        }
+
+        private void listContatos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

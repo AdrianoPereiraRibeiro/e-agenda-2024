@@ -44,5 +44,15 @@
                 DialogResult = DialogResult.None;
             }
         }
+
+        private void txtId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TelaContatoForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

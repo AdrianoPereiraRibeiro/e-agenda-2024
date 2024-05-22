@@ -5,7 +5,7 @@ namespace eAgenda.WinApp.ModuloContato
     public class ControladorContato : ControladorBase
     {
         private RepositorioContato repositorioContato;
-        private ListagemContatoControl listagemContato;
+        private ListagemCompromissoControl listagemContato;
 
         public ControladorContato(RepositorioContato repositorio)
         {
@@ -98,7 +98,7 @@ namespace eAgenda.WinApp.ModuloContato
         public override UserControl ObterListagem()
         {
             if (listagemContato == null)
-                listagemContato = new ListagemContatoControl();
+                listagemContato = new ListagemCompromissoControl();
 
             CarregarContatos();
 

@@ -1,4 +1,4 @@
-﻿namespace eAgenda.WinApp.ModuloContato
+﻿namespace eAgenda.WinApp.ModuloCompromisso
 {
     partial class ListagemCompromissoControl
     {
@@ -28,35 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listContatos = new ListBox();
+            listCompromissos = new ListBox();
             SuspendLayout();
             // 
-            // listContatos
+            // listCompromissos
             // 
-            listContatos.Dock = DockStyle.Fill;
-            listContatos.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            listContatos.FormattingEnabled = true;
-            listContatos.ItemHeight = 21;
-            listContatos.Location = new Point(0, 0);
-            listContatos.Margin = new Padding(3, 4, 3, 4);
-            listContatos.Name = "listContatos";
-            listContatos.Size = new Size(630, 431);
-            listContatos.TabIndex = 0;
-            listContatos.SelectedIndexChanged += listContatos_SelectedIndexChanged;
+            listCompromissos.Dock = DockStyle.Fill;
+            listCompromissos.FormattingEnabled = true;
+            listCompromissos.Location = new Point(0, 0);
+            listCompromissos.Name = "listCompromissos";
+            listCompromissos.Size = new Size(641, 331);
+            listCompromissos.TabIndex = 0;
+            listCompromissos.SelectedIndexChanged += listCompromissos_SelectedIndexChanged;
             // 
             // ListagemContatoControl
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(listContatos);
-            Margin = new Padding(3, 4, 3, 4);
+            Controls.Add(listCompromissos);
             Name = "ListagemContatoControl";
-            Size = new Size(630, 431);
+            Size = new Size(641, 331);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private ListBox listContatos;
+        private ListBox listCompromissos;
     }
 }
