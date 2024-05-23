@@ -10,20 +10,25 @@ namespace eAgenda.WinApp.ModuloCompromisso
 {
     public class Compromisso:EntidadeBase
     {
-        //Para cada compromisso, José Pedro gostaria de armazenar: Assunto, local, data do compromisso, hora de início e término.
+        
         public string Assunto { get; set; }
         public string Local { get; set; }
         public string Data { get; set; }
         public string Inicio { get; set; }
         public string Termino { get; set; }
 
-        public Compromisso(string assunto, string local, string data, string inicio, string termino)
+        public Contato Contato { get; set; }
+        public string Localizacao { get; set; }
+
+        public Compromisso(string assunto, string local, string data, string inicio, string termino, Contato contato,  string localizacao)
         {
             Assunto = assunto;
             Local = local;
             Data = data;
             Inicio = inicio;
             Termino = termino;
+            Contato = contato;
+            Localizacao = localizacao;
         }
 
         public override List<string> Validar()
@@ -57,11 +62,15 @@ namespace eAgenda.WinApp.ModuloCompromisso
             Data = atualizado.Data;
             Inicio = atualizado.Inicio;
             Termino = atualizado.Termino;
+            Contato = atualizado.Contato;
+            Localizacao = atualizado.Localizacao;
+
+
         }
 
         public override string ToString()
         {
-            return $"Id: {Id}, Assunto: {Assunto}, Local: {Local}, Data: {Data} Inicio: {Inicio}, Término: {Termino}";
+            return $"Id: {Id}, Assunto: {Assunto}, Local: {Local}, Localização: {Localizacao}, Data: {Data} Inicio: {Inicio}, Término: {Termino}, Contato: {Contato}";
         }
     }
 }

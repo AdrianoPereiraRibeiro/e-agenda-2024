@@ -1,7 +1,11 @@
-﻿namespace eAgenda.WinApp.ModuloCompromisso
+﻿using eAgenda.WinApp.ModuloContato;
+
+namespace eAgenda.WinApp.ModuloCompromisso
 {
     public partial class TelaCompromissoForm : Form
     {
+
+        
         private Compromisso compromisso;
         public Compromisso Compromisso
         {
@@ -13,14 +17,15 @@
                 txtData.Text = value.Data;
                 txtInicio.Text = value.Inicio;
                 txtTermino.Text = value.Termino;
+                comboContato.SelectedItem = value.Contato;
             }
             get
             {
-                return  compromisso;
+                return compromisso;
             }
         }
 
-      
+
 
         public TelaCompromissoForm()
         {
@@ -49,8 +54,12 @@
             string data = txtData.Text;
             string inicio = txtInicio.Text;
             string termino = txtTermino.Text;
+            Contato contato = (Contato)comboContato.SelectedItem;
+            string localizacao = null;
+            if (radioButton1.Checked) { localizacao = radioButton1.Text; }
+            else { localizacao = radioButton2.Text; }
 
-            compromisso = new Compromisso(assunto, local, data, inicio, termino);
+            compromisso = new Compromisso(assunto, local, data, inicio, termino, contato, localizacao);
 
             List<string> erros = compromisso.Validar();
 
@@ -60,6 +69,46 @@
 
                 DialogResult = DialogResult.None;
             }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                comboContato.Enabled = true;
+            }
+            else
+            {
+                comboContato.Enabled = false;
+                comboContato.Items.Clear();
+            }
+
+        }
+
+        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboContato_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+
+           comboContato.Items.Clear();
+
+            RepositorioContato repositorio = new RepositorioContato();
+            repositorio.SelecionarTodos();
+            
+                comboContato.Items.Add(repositorio);
         }
     }
 }
