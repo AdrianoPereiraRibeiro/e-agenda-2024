@@ -1,4 +1,5 @@
 ﻿using eAgenda.WinApp.ModuloContato;
+using eAgenda.WinApp.Compartilhado;
 
 namespace eAgenda.WinApp.ModuloCompromisso
 {
@@ -74,17 +75,23 @@ namespace eAgenda.WinApp.ModuloCompromisso
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
         }
+        public void CarregarContatos(List<Contato> contatos)
+        {
+            comboContato.Items.Clear();
 
+            foreach (Contato c in contatos)
+                comboContato.Items.Add(c);
+        }
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
             {
-                comboContato.Enabled = true;
+                
+                comboContato.Enabled = true;                            
             }
             else
             {
-                comboContato.Enabled = false;
-                comboContato.Items.Clear();
+                comboContato.Enabled = false;              
             }
 
         }
@@ -103,12 +110,7 @@ namespace eAgenda.WinApp.ModuloCompromisso
         {
           
 
-           comboContato.Items.Clear();
-
-            RepositorioContato repositorio = new RepositorioContato();
-            repositorio.SelecionarTodos();
             
-                comboContato.Items.Add(repositorio);
         }
     }
 }

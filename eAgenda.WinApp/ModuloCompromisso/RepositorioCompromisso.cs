@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eAgenda.WinApp.ModuloCompromisso
 {
-    internal class RepositorioCompromisso : RepositorioBase<Compromisso>
+    public class RepositorioCompromisso : RepositorioBase<Compromisso>
     {
     }
 }

@@ -8,15 +8,13 @@ using System.Threading.Tasks;
 
 namespace eAgenda.WinApp.ModuloCompromisso
 {
-    internal class ControladorCompromisso:ControladorBase
+    public class ControladorCompromisso:ControladorBase
     {
-        private RepositorioCompromisso repositorioCompromisso;
         private ListagemCompromissoControl listagemCompromisso;
 
-        public ControladorCompromisso(RepositorioCompromisso repositorio)
-        {
-            repositorioCompromisso = repositorio;
-        }
+        private RepositorioCompromisso repositorioCompromisso;
+        private RepositorioContato repositorioContato;
+        
 
         public override string TipoCadastro { get { return "Compromisso"; } }
 
@@ -25,14 +23,21 @@ namespace eAgenda.WinApp.ModuloCompromisso
         public override string ToolTipEditar { get { return "Editar um compromisso existente"; } }
 
         public override string ToolTipExcluir { get { return "Excluir um compromisso existente"; } }
-
+        public ControladorCompromisso(RepositorioCompromisso repositorioCompromisso, RepositorioContato repositorioContato)
+        {
+            this.repositorioCompromisso = repositorioCompromisso;
+            this.repositorioContato = repositorioContato;
+        }
         public override void Adicionar()
         {
             TelaCompromissoForm telaCompromisso = new TelaCompromissoForm();
 
+            List<Contato> contatosCadastrados = repositorioContato.SelecionarTodos();
+
+            telaCompromisso.CarregarContatos(contatosCadastrados);
+
             DialogResult resultado = telaCompromisso.ShowDialog();
 
-            
             if (resultado != DialogResult.OK)
                 return;
 
