@@ -39,44 +39,44 @@
             // lblId
             // 
             lblId.AutoSize = true;
-            lblId.Location = new Point(45, 29);
+            lblId.Location = new Point(44, 29);
             lblId.Name = "lblId";
-            lblId.Size = new Size(25, 20);
+            lblId.Size = new Size(32, 25);
             lblId.TabIndex = 0;
             lblId.Text = "Id:";
             // 
             // txtId
             // 
             txtId.Enabled = false;
-            txtId.Location = new Point(76, 26);
+            txtId.Location = new Point(82, 26);
             txtId.Name = "txtId";
-            txtId.Size = new Size(72, 27);
+            txtId.Size = new Size(72, 32);
             txtId.TabIndex = 1;
             txtId.Text = "0";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(20, 62);
+            label1.Location = new Point(12, 72);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
+            label1.Size = new Size(64, 25);
             label1.TabIndex = 0;
             label1.Text = "Título:";
             // 
             // txtTitulo
             // 
-            txtTitulo.Location = new Point(76, 59);
+            txtTitulo.Location = new Point(82, 72);
             txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(358, 27);
+            txtTitulo.Size = new Size(358, 32);
             txtTitulo.TabIndex = 1;
             // 
             // btnGravar
             // 
             btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Font = new Font("Segoe UI", 11.25F);
-            btnGravar.Location = new Point(228, 153);
+            btnGravar.Location = new Point(168, 140);
             btnGravar.Name = "btnGravar";
-            btnGravar.Size = new Size(100, 37);
+            btnGravar.Size = new Size(145, 51);
             btnGravar.TabIndex = 17;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
@@ -85,18 +85,18 @@
             // 
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Font = new Font("Segoe UI", 11.25F);
-            btnCancelar.Location = new Point(334, 153);
+            btnCancelar.Location = new Point(319, 140);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(100, 37);
+            btnCancelar.Size = new Size(121, 51);
             btnCancelar.TabIndex = 16;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             // 
             // TelaCategoriaForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(446, 195);
+            ClientSize = new Size(452, 203);
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
             Controls.Add(txtTitulo);

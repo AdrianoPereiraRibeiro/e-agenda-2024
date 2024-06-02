@@ -34,20 +34,21 @@
             // listCompromissos
             // 
             listCompromissos.Dock = DockStyle.Fill;
+            listCompromissos.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             listCompromissos.FormattingEnabled = true;
+            listCompromissos.ItemHeight = 20;
             listCompromissos.Location = new Point(0, 0);
             listCompromissos.Name = "listCompromissos";
-            listCompromissos.Size = new Size(641, 331);
+            listCompromissos.Size = new Size(469, 297);
             listCompromissos.TabIndex = 0;
-            listCompromissos.SelectedIndexChanged += listCompromissos_SelectedIndexChanged;
             // 
-            // ListagemContatoControl
+            // ListagemCompromissoControl
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(listCompromissos);
-            Name = "ListagemContatoControl";
-            Size = new Size(641, 331);
+            Name = "ListagemCompromissoControl";
+            Size = new Size(469, 297);
             ResumeLayout(false);
         }
 

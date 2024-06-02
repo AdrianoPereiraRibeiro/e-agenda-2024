@@ -1,12 +1,10 @@
 ﻿using eAgenda.WinApp.ModuloContato;
-using eAgenda.WinApp.Compartilhado;
 
 namespace eAgenda.WinApp.ModuloCompromisso
 {
     public partial class TelaCompromissoForm : Form
     {
 
-        
         private Compromisso compromisso;
         public Compromisso Compromisso
         {
@@ -14,11 +12,25 @@ namespace eAgenda.WinApp.ModuloCompromisso
             {
                 txtId.Text = value.Id.ToString();
                 txtAssunto.Text = value.Assunto;
-                txtLocal.Text = value.Local;
-                txtData.Text = value.Data;
-                txtInicio.Text = value.Inicio;
-                txtTermino.Text = value.Termino;
-                comboContato.SelectedItem = value.Contato;
+                txtData.Value = value.Data;
+                txtHoraInicio.Value = value.Data.Date + value.HoraInicio;
+                txtHoraTermino.Value = value.Data.Date + value.HoraTermino;
+
+                checkMarcarContato.Checked = value.Contato != null;
+
+                cmbContatos.Enabled = value.Contato != null;
+                cmbContatos.SelectedItem = value.Contato;
+
+                if (value.TipoCompromisso == TipoCompromissoEnum.Presencial)
+                {
+                    rdbPresencial.Checked = true;
+                    txtLocal.Text = value.Local;
+                }
+                else
+                {
+                    rdbRemoto.Checked = true;
+                    txtLink.Text = value.Link;
+                }
             }
             get
             {
@@ -26,91 +38,73 @@ namespace eAgenda.WinApp.ModuloCompromisso
             }
         }
 
-
-
         public TelaCompromissoForm()
         {
             InitializeComponent();
         }
-        public void TelaCompromissoForm_Load(object sender, EventArgs e)
+
+        public void CarregarContatos(List<Contato> contatos)
         {
+            cmbContatos.Items.Clear();
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-
+            foreach (Contato c in contatos)
+                cmbContatos.Items.Add(c);
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
         {
             string assunto = txtAssunto.Text;
+            DateTime data = txtData.Value;
+            TimeSpan horaInicio = txtHoraInicio.Value.TimeOfDay;
+            TimeSpan horaTermino = txtHoraTermino.Value.TimeOfDay;
+            Contato contato = (Contato)cmbContatos.SelectedItem;
+
             string local = txtLocal.Text;
-            string data = txtData.Text;
-            string inicio = txtInicio.Text;
-            string termino = txtTermino.Text;
-            Contato contato = (Contato)comboContato.SelectedItem;
-            string localizacao = null;
-            if (radioButton1.Checked) { localizacao = radioButton1.Text; }
-            else { localizacao = radioButton2.Text; }
+            string link = txtLink.Text;
 
-            compromisso = new Compromisso(assunto, local, data, inicio, termino, contato, localizacao);
+            compromisso = new Compromisso(assunto, local, link, data, horaInicio, horaTermino, contato);
+        }
 
-            List<string> erros = compromisso.Validar();
-
-            if (erros.Count > 0)
+        private void checkMarcarContato_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkMarcarContato.Checked)
+                cmbContatos.Enabled = true;
+            else
             {
-                TelaPrincipalForm.Instancia.AtualizarRodape(erros[0]);
-
-                DialogResult = DialogResult.None;
+                cmbContatos.SelectedItem = null;
+                cmbContatos.Enabled = false;
             }
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        private void rdbPresencial_CheckedChanged(object sender, EventArgs e)
         {
-        }
-        public void CarregarContatos(List<Contato> contatos)
-        {
-            comboContato.Items.Clear();
-
-            foreach (Contato c in contatos)
-                comboContato.Items.Add(c);
-        }
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked)
+            if (rdbPresencial.Checked)
             {
-                
-                comboContato.Enabled = true;                            
+                txtLink.Text = string.Empty;
+                txtLink.Enabled = false;
             }
             else
             {
-                comboContato.Enabled = false;              
+                txtLink.Enabled = true;
             }
-
         }
 
-        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        private void rdbRemoto_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (rdbRemoto.Checked)
+            {
+                txtLocal.Text = string.Empty;
+                txtLocal.Enabled = false;
+            }
+            else
+            {
+                txtLocal.Enabled = true;
+            }
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void comboContato_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          
-
-            
         }
     }
 }

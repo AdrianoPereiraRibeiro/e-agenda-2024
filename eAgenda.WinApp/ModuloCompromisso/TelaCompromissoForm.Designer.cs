@@ -29,148 +29,226 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
             txtId = new TextBox();
+            label2 = new Label();
             txtAssunto = new TextBox();
-            txtLocal = new TextBox();
+            label3 = new Label();
             txtData = new DateTimePicker();
-            txtInicio = new DateTimePicker();
-            txtTermino = new DateTimePicker();
+            label4 = new Label();
+            txtHoraInicio = new DateTimePicker();
+            label5 = new Label();
+            txtHoraTermino = new DateTimePicker();
+            checkMarcarContato = new CheckBox();
+            cmbContatos = new ComboBox();
+            rdbRemoto = new RadioButton();
+            rdbPresencial = new RadioButton();
+            txtLink = new TextBox();
+            txtLocal = new TextBox();
+            groupBox1 = new GroupBox();
             btnGravar = new Button();
             btnCancelar = new Button();
-            comboContato = new ComboBox();
-            checkBox1 = new CheckBox();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(92, 29);
+            label1.Font = new Font("Segoe UI", 11.25F);
+            label1.Location = new Point(57, 95);
             label1.Name = "label1";
-            label1.Size = new Size(41, 31);
+            label1.Size = new Size(32, 25);
             label1.TabIndex = 0;
-            label1.Text = "ID:";
-            label1.Click += label1_Click;
+            label1.Text = "Id:";
+            // 
+            // txtId
+            // 
+            txtId.Enabled = false;
+            txtId.Font = new Font("Segoe UI", 11.25F);
+            txtId.Location = new Point(110, 95);
+            txtId.Margin = new Padding(3, 4, 3, 4);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(114, 32);
+            txtId.TabIndex = 1;
+            txtId.Text = "0";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(11, 96);
+            label2.Font = new Font("Segoe UI", 11.25F);
+            label2.Location = new Point(6, 132);
             label2.Name = "label2";
-            label2.Size = new Size(122, 31);
-            label2.TabIndex = 1;
-            label2.Text = "Local/Link:";
+            label2.Size = new Size(83, 25);
+            label2.TabIndex = 0;
+            label2.Text = "Assunto:";
+            label2.Click += label2_Click;
+            // 
+            // txtAssunto
+            // 
+            txtAssunto.Font = new Font("Segoe UI", 11.25F);
+            txtAssunto.Location = new Point(110, 135);
+            txtAssunto.Margin = new Padding(3, 4, 3, 4);
+            txtAssunto.Name = "txtAssunto";
+            txtAssunto.Size = new Size(363, 32);
+            txtAssunto.TabIndex = 1;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(66, 132);
+            label3.Font = new Font("Segoe UI", 11.25F);
+            label3.Location = new Point(34, 171);
             label3.Name = "label3";
-            label3.Size = new Size(67, 31);
-            label3.TabIndex = 2;
+            label3.Size = new Size(55, 25);
+            label3.TabIndex = 0;
             label3.Text = "Data:";
+            // 
+            // txtData
+            // 
+            txtData.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtData.Format = DateTimePickerFormat.Short;
+            txtData.Location = new Point(110, 175);
+            txtData.Margin = new Padding(3, 4, 3, 4);
+            txtData.Name = "txtData";
+            txtData.Size = new Size(159, 32);
+            txtData.TabIndex = 2;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(59, 177);
+            label4.Font = new Font("Segoe UI", 11.25F);
+            label4.Location = new Point(34, 224);
             label4.Name = "label4";
-            label4.Size = new Size(74, 31);
-            label4.TabIndex = 3;
+            label4.Size = new Size(62, 25);
+            label4.TabIndex = 0;
             label4.Text = "Início:";
+            // 
+            // txtHoraInicio
+            // 
+            txtHoraInicio.CustomFormat = "HH:mm";
+            txtHoraInicio.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtHoraInicio.Format = DateTimePickerFormat.Custom;
+            txtHoraInicio.Location = new Point(110, 224);
+            txtHoraInicio.Margin = new Padding(3, 4, 3, 4);
+            txtHoraInicio.Name = "txtHoraInicio";
+            txtHoraInicio.ShowUpDown = true;
+            txtHoraInicio.Size = new Size(127, 32);
+            txtHoraInicio.TabIndex = 2;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(310, 177);
+            label5.Font = new Font("Segoe UI", 11.25F);
+            label5.Location = new Point(267, 231);
             label5.Name = "label5";
-            label5.Size = new Size(101, 31);
-            label5.TabIndex = 4;
+            label5.Size = new Size(84, 25);
+            label5.TabIndex = 0;
             label5.Text = "Término:";
             // 
-            // label6
+            // txtHoraTermino
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(32, 60);
-            label6.Name = "label6";
-            label6.Size = new Size(101, 31);
-            label6.TabIndex = 5;
-            label6.Text = "Assunto:";
+            txtHoraTermino.CustomFormat = "HH:mm";
+            txtHoraTermino.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtHoraTermino.Format = DateTimePickerFormat.Custom;
+            txtHoraTermino.Location = new Point(359, 224);
+            txtHoraTermino.Margin = new Padding(3, 4, 3, 4);
+            txtHoraTermino.Name = "txtHoraTermino";
+            txtHoraTermino.ShowUpDown = true;
+            txtHoraTermino.Size = new Size(127, 32);
+            txtHoraTermino.TabIndex = 2;
             // 
-            // txtId
+            // checkMarcarContato
             // 
-            txtId.AccessibleRole = AccessibleRole.None;
-            txtId.Enabled = false;
-            txtId.Location = new Point(139, 29);
-            txtId.Name = "txtId";
-            txtId.Size = new Size(54, 27);
-            txtId.TabIndex = 6;
-            txtId.Text = "0";
-            txtId.UseWaitCursor = true;
-            txtId.TextChanged += textBox1_TextChanged;
+            checkMarcarContato.AutoSize = true;
+            checkMarcarContato.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            checkMarcarContato.Location = new Point(12, 297);
+            checkMarcarContato.Margin = new Padding(3, 4, 3, 4);
+            checkMarcarContato.Name = "checkMarcarContato";
+            checkMarcarContato.Size = new Size(264, 29);
+            checkMarcarContato.TabIndex = 3;
+            checkMarcarContato.Text = "Deseja marcar um contato?";
+            checkMarcarContato.UseVisualStyleBackColor = true;
+            checkMarcarContato.CheckedChanged += checkMarcarContato_CheckedChanged;
             // 
-            // txtAssunto
+            // cmbContatos
             // 
-            txtAssunto.Location = new Point(139, 66);
-            txtAssunto.Name = "txtAssunto";
-            txtAssunto.Size = new Size(399, 27);
-            txtAssunto.TabIndex = 7;
+            cmbContatos.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbContatos.Enabled = false;
+            cmbContatos.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbContatos.FormattingEnabled = true;
+            cmbContatos.Location = new Point(286, 297);
+            cmbContatos.Margin = new Padding(3, 4, 3, 4);
+            cmbContatos.Name = "cmbContatos";
+            cmbContatos.Size = new Size(187, 33);
+            cmbContatos.TabIndex = 4;
+            // 
+            // rdbRemoto
+            // 
+            rdbRemoto.AutoSize = true;
+            rdbRemoto.Checked = true;
+            rdbRemoto.Location = new Point(19, 49);
+            rdbRemoto.Margin = new Padding(3, 4, 3, 4);
+            rdbRemoto.Name = "rdbRemoto";
+            rdbRemoto.Size = new Size(101, 29);
+            rdbRemoto.TabIndex = 0;
+            rdbRemoto.TabStop = true;
+            rdbRemoto.Text = "Remoto:";
+            rdbRemoto.UseVisualStyleBackColor = true;
+            rdbRemoto.CheckedChanged += rdbRemoto_CheckedChanged;
+            // 
+            // rdbPresencial
+            // 
+            rdbPresencial.AutoSize = true;
+            rdbPresencial.Location = new Point(21, 93);
+            rdbPresencial.Margin = new Padding(3, 4, 3, 4);
+            rdbPresencial.Name = "rdbPresencial";
+            rdbPresencial.Size = new Size(123, 29);
+            rdbPresencial.TabIndex = 0;
+            rdbPresencial.TabStop = true;
+            rdbPresencial.Text = "Presencial:";
+            rdbPresencial.UseVisualStyleBackColor = true;
+            rdbPresencial.CheckedChanged += rdbPresencial_CheckedChanged;
+            // 
+            // txtLink
+            // 
+            txtLink.Location = new Point(137, 48);
+            txtLink.Margin = new Padding(3, 4, 3, 4);
+            txtLink.Name = "txtLink";
+            txtLink.Size = new Size(243, 32);
+            txtLink.TabIndex = 1;
             // 
             // txtLocal
             // 
-            txtLocal.Location = new Point(139, 102);
+            txtLocal.Enabled = false;
+            txtLocal.Location = new Point(137, 92);
+            txtLocal.Margin = new Padding(3, 4, 3, 4);
             txtLocal.Name = "txtLocal";
-            txtLocal.Size = new Size(297, 27);
-            txtLocal.TabIndex = 8;
+            txtLocal.Size = new Size(243, 32);
+            txtLocal.TabIndex = 2;
             // 
-            // txtData
+            // groupBox1
             // 
-            txtData.Format = DateTimePickerFormat.Short;
-            txtData.Location = new Point(139, 136);
-            txtData.Name = "txtData";
-            txtData.Size = new Size(121, 27);
-            txtData.TabIndex = 11;
-            txtData.Value = new DateTime(2024, 5, 22, 0, 0, 0, 0);
-            // 
-            // txtInicio
-            // 
-            txtInicio.Format = DateTimePickerFormat.Time;
-            txtInicio.Location = new Point(139, 181);
-            txtInicio.Name = "txtInicio";
-            txtInicio.Size = new Size(121, 27);
-            txtInicio.TabIndex = 12;
-            txtInicio.Value = new DateTime(2024, 5, 22, 0, 0, 0, 0);
-            // 
-            // txtTermino
-            // 
-            txtTermino.Format = DateTimePickerFormat.Time;
-            txtTermino.Location = new Point(417, 181);
-            txtTermino.Name = "txtTermino";
-            txtTermino.Size = new Size(121, 27);
-            txtTermino.TabIndex = 13;
-            txtTermino.Value = new DateTime(2024, 5, 22, 0, 0, 0, 0);
+            groupBox1.Controls.Add(txtLocal);
+            groupBox1.Controls.Add(txtLink);
+            groupBox1.Controls.Add(rdbPresencial);
+            groupBox1.Controls.Add(rdbRemoto);
+            groupBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            groupBox1.Location = new Point(74, 353);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(399, 143);
+            groupBox1.TabIndex = 5;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Localização";
             // 
             // btnGravar
             // 
             btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Font = new Font("Segoe UI", 11.25F);
-            btnGravar.Location = new Point(392, 307);
+            btnGravar.Location = new Point(238, 549);
             btnGravar.Margin = new Padding(3, 4, 3, 4);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(114, 49);
-            btnGravar.TabIndex = 17;
+            btnGravar.TabIndex = 8;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = true;
             btnGravar.Click += btnGravar_Click;
@@ -179,89 +257,44 @@
             // 
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Font = new Font("Segoe UI", 11.25F);
-            btnCancelar.Location = new Point(512, 307);
+            btnCancelar.Location = new Point(359, 549);
             btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(114, 49);
-            btnCancelar.TabIndex = 16;
+            btnCancelar.TabIndex = 7;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // comboContato
-            // 
-            comboContato.Enabled = false;
-            comboContato.FormattingEnabled = true;
-            comboContato.Location = new Point(310, 254);
-            comboContato.Name = "comboContato";
-            comboContato.Size = new Size(228, 28);
-            comboContato.TabIndex = 15;
-            comboContato.SelectedIndexChanged += comboContato_SelectedIndexChanged;
-            // 
-            // checkBox1
-            // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(59, 254);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(229, 24);
-            checkBox1.TabIndex = 14;
-            checkBox1.Text = "Deseja adicionar um contato?";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Checked = true;
-            radioButton1.Location = new Point(442, 105);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(96, 24);
-            radioButton1.TabIndex = 9;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Presencial";
-            radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.CheckedChanged += radioButton1_CheckedChanged_1;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(543, 105);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(83, 24);
-            radioButton2.TabIndex = 10;
-            radioButton2.Text = "Remoto";
-            radioButton2.UseVisualStyleBackColor = true;
-            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
             // 
             // TelaCompromissoForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(655, 369);
-            Controls.Add(radioButton2);
-            Controls.Add(radioButton1);
-            Controls.Add(checkBox1);
-            Controls.Add(comboContato);
-            Controls.Add(btnCancelar);
+            ClientSize = new Size(504, 615);
             Controls.Add(btnGravar);
-            Controls.Add(txtTermino);
-            Controls.Add(txtInicio);
-            Controls.Add(txtData);
-            Controls.Add(txtLocal);
-            Controls.Add(txtAssunto);
-            Controls.Add(txtId);
-            Controls.Add(label6);
+            Controls.Add(btnCancelar);
+            Controls.Add(groupBox1);
+            Controls.Add(cmbContatos);
+            Controls.Add(checkMarcarContato);
+            Controls.Add(txtHoraTermino);
+            Controls.Add(txtHoraInicio);
             Controls.Add(label5);
+            Controls.Add(txtData);
             Controls.Add(label4);
+            Controls.Add(txtAssunto);
             Controls.Add(label3);
             Controls.Add(label2);
+            Controls.Add(txtId);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "TelaCompromissoForm";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Cadastro de Compromissos";
-            Load += TelaCompromissoForm_Load;
+            ShowIcon = false;
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Cadastro de Compromisso";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -269,22 +302,23 @@
         #endregion
 
         private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private Label label6;
         private TextBox txtId;
+        private Label label2;
         private TextBox txtAssunto;
-        private TextBox txtLocal;
+        private Label label3;
         private DateTimePicker txtData;
-        private DateTimePicker txtInicio;
-        private DateTimePicker txtTermino;
+        private Label label4;
+        private DateTimePicker txtHoraInicio;
+        private Label label5;
+        private DateTimePicker txtHoraTermino;
+        private CheckBox checkMarcarContato;
+        private ComboBox cmbContatos;
+        private RadioButton rdbRemoto;
+        private RadioButton rdbPresencial;
+        private TextBox txtLink;
+        private TextBox txtLocal;
+        private GroupBox groupBox1;
         private Button btnGravar;
         private Button btnCancelar;
-        private ComboBox comboContato;
-        private CheckBox checkBox1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
     }
 }
